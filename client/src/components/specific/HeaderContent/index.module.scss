@@ -1,0 +1,48 @@
+@import '@/constants/colors.scss';
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 0px;
+
+  
+  font-family: 'Philosopher', sans-serif;
+
+  a {
+    display: flex;
+    align-items: center;
+
+    padding: 10px 0px 0px 0px;
+
+    color: $darkGreenColor;
+
+    
+    font-size: 2.1rem;
+
+    p {
+      margin: 0px;
+    }
+  }
+
+  img {
+    position: relative;
+    top: -10px;
+
+    height: 55px;
+  }
+
+  button {
+    font-size: 1rem;
+    font-family: inherit;
+    border: none;
+    background-color: transparent;
+    margin-right: 50px;
+    cursor: pointer;
+
+    &:hover {
+      color: green
+    }
+  }
+}

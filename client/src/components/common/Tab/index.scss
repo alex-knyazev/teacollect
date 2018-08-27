@@ -1,0 +1,18 @@
+@import '@/constants/colors.scss';
+
+.tab {
+  margin: 0px 1px;
+  height: 30px;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color: #000000, $alpha: 0.05);
+  }
+
+}
+
+.tab_chosen {
+  border-bottom: 1px solid $darkGreenColor;
+}
+

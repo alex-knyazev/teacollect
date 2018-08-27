@@ -1,0 +1,13 @@
+@import '@/constants/colors.scss';
+
+.searchForm {
+  width: 32%;
+}
+
+.searchFormInput {
+  border: 1px solid $middleGreenColor;
+  height: 38px;
+  border-radius: 2px;
+  font-family: inherit;
+  padding: 8px;
+}

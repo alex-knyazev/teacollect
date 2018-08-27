@@ -1,0 +1,22 @@
+@import '@/constants/colors.scss';
+
+.layout {
+  display: grid;
+
+  height: 100vh;
+
+  border-top: 1px solid $darkGreenColor;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header"
+    "main";
+    padding: 0px 40px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
