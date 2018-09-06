@@ -13,7 +13,7 @@ const SearchForm = (props) => {
 
   return (
     <div className={searchFormCn}>
-      <input className={searchFormInputClassName} placeholder="" />
+      <input type="search" className={searchFormInputClassName} placeholder="" />
     </div>
   );
 };

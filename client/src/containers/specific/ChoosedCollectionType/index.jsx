@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { ApolloConsumer } from 'react-apollo';
 
 import { getCollectionAC } from '@/actionCreators/collection';
 import ChoosedCollectionTypeC from '@/components/specific/ChoosedCollectionType';
@@ -14,7 +15,21 @@ class ChoosedCollectionType extends Component {
   render() {
     const { collection } = this.props;
     const { data, isWaiting, isError } = collection;
-    return <ChoosedCollectionTypeC data={data} isWaiting={isWaiting} isError={isError} />;
+    return (
+      <ApolloConsumer>
+        {(client) => {
+          debugger;
+          return (
+            <div>
+              <h1>The current cache is:</h1>
+              <pre>123123123</pre>
+            </div>
+          );
+        }}
+      </ApolloConsumer>
+    );
+
+    // return <ChoosedCollectionTypeC data={data} isWaiting={isWaiting} isError={isError} />;
   }
 }
 
