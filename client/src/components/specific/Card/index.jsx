@@ -41,15 +41,18 @@ class Card extends Component {
     });
 
     const { data } = this.props;
+
     const {
       name,
       image,
-      translatedName,
-      timeOfBrewing,
+      translatedNames,
+      brewingTime,
       temperature,
-      amountOfBrewing,
+      brewingAmount,
       grams,
     } = data;
+
+    const russian = translatedNames[0];
 
     const { src } = image;
     return (
@@ -59,7 +62,7 @@ class Card extends Component {
           <div className={styles.mainInfo}>
             <div className={styles.names}>
               <h4 className={styles.firstName}>{name}</h4>
-              <h5 className={styles.secondName}>{translatedName}</h5>
+              <h5 className={styles.secondName}>{russian.name}</h5>
             </div>
             {isShowMenu && (
               <div className={styles.menu}>
@@ -90,7 +93,7 @@ class Card extends Component {
           </div>
           <div className={styles.additionalInfo}>
             <div className={styles.badge} title="Время заварки">
-              <span>{timeOfBrewing}</span>
+              <span>{brewingTime[0]}</span>
               <img alt="Время заварки" src={clockImg} />
             </div>
             <div className={styles.badge} title="Температура заварки">
@@ -99,7 +102,7 @@ class Card extends Component {
             </div>
             <div className={styles.badge} title="Количество завариваний">
               <span>
-                {amountOfBrewing}
+                {brewingAmount[0]}
                 <span>x</span>
               </span>
               <img alt="Количество завариваний" src={kettleImg} />

@@ -1,0 +1,15 @@
+"collection of tea which see in app"
+type CollectionType {
+  id: ID!
+  names: [CollectionTypeName]
+}
+
+"name of tea colleciton which user see in app"
+type CollectionTypeName {
+  name: String
+  language: String
+}
+
+type Query {
+  collectionTypes: [CollectionType]
+}

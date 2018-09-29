@@ -1,37 +1,36 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { graphql } from 'react-apollo';
+
 import { changeCollectionTypeAC } from '@/actionCreators/collectionsTypes';
 
 import CollectionTypeSelectC from '@/components/specific/CollectionTypeSelect';
 
-const CollectionTypeSelect = (props) => {
-  const {
-    collectionsTypes: { currentCollectionType, types },
-    changeCollectionTypeAC,
-  } = props;
+const CollectionTypeSelect = props => {
+  const a = 2;
+  
+  const { chosenCollectionType, changeCollectionTypeAC } = props;
 
-  const propsC = { types, currentCollectionType, changeCollectionTypeAC };
-  return <CollectionTypeSelectC {...propsC} />;
+  return (
+    <CollectionTypeSelectC
+      chosenCollectionType={chosenCollectionType}
+      changeCollectionTypeAC={changeCollectionTypeAC}
+    />
+  );
 };
 
-CollectionTypeSelect.propTypes = {
-  collectionsTypes: PropTypes.shape({
-    currentCollectionType: PropTypes.string.isRequired,
-    types: PropTypes.arrayOf(PropTypes.string),
-  }).isRequired,
-  changeCollectionTypeAC: PropTypes.func.isRequired,
+const mapStateToProps = state => {
+  const { collectionsTypes } = state;
+  return { chosenCollectionType: collectionsTypes.chosenCollectionType };
 };
-
-const mapStateToProps = state => ({
-  collectionsTypes: state.collectionsTypes,
-});
 
 const mapDispatchToProps = {
   changeCollectionTypeAC,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(CollectionTypeSelect);
+export default graphql(getCollectionTypes)(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(CollectionTypeSelect),
+);

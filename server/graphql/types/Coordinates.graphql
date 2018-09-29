@@ -1,0 +1,10 @@
+"longtitude and lattitude object"
+type Coordinates {
+  lat: Float
+  lng: Float
+}
+
+input CoordinatesInput {
+  lat: Float
+  lng: Float
+}

@@ -1,0 +1,39 @@
+type Tea {
+  id: ID!
+  type: TeaType!
+  name: String
+  brewingTime: [Float]
+  brewingAmount: [Int]
+  temperature: [Int]
+  grams: [Int]
+  originText: String
+  brewingMethodText: String
+  productionText: String
+  effectText: String
+  image: Image
+  birthplace: Birthplace
+  translatedNames: [TranslatedName]
+}
+
+input TeaInput {
+  name: String
+  brewingTime: [Float]
+  brewingAmount: [Int]
+  temperature: [Int]
+  grams: [Int]
+  originText: String
+  brewingMethodText: String
+  productionText: String
+  effectText: String
+  image: ImageInput
+}
+
+type Query {
+  teas: [Tea]
+}
+
+type Mutation {
+  createTea(input: TeaInput): Tea
+  updateTea(id: ID!, input: TeaInput): Tea
+  deleteTea(id: ID!): ID
+}

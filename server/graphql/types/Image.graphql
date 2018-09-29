@@ -1,0 +1,9 @@
+type Image {
+  title: String
+  src: String
+}
+
+input ImageInput {
+  title: String
+  src: String
+}

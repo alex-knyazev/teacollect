@@ -11,7 +11,7 @@ import CollectionsPage from '@/pages/CollectionsPage';
 import Layout from '../Layout';
 
 const client = new ApolloClient({
-  uri: 'https://w5xlvm3vzz.lp.gql.zone/graphql',
+  uri: 'http://localhost:3003/graphql',
 });
 
 const App = () => (

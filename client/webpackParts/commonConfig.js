@@ -17,7 +17,7 @@ const createCommonConfig = () => ({
   ],
 
   resolve: {
-    extensions: ['.json', '.js', '.jsx', '.css', '.scss'],
+    extensions: ['.json', '.js', '.jsx', '.css', '.scss', 'gql', 'graphql'],
     alias: {
       '@': path.resolve(__dirname, '../src/'),
     },
@@ -43,6 +43,11 @@ const createCommonConfig = () => ({
         use: {
           loader: 'babel-loader',
         },
+      },
+      {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        loader: 'graphql-tag/loader',
       },
       {
         test: /\.html$/,

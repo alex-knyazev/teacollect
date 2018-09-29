@@ -1,0 +1,18 @@
+query teas {
+  teas {
+    id
+    name
+    translatedNames {
+      name
+      language
+    }
+    image {
+      src
+      title
+    }
+    brewingTime
+    temperature
+    brewingAmount
+    grams
+  }
+}

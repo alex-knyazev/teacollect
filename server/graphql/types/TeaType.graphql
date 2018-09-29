@@ -1,0 +1,22 @@
+type TeaType {
+  id: ID!
+  names: [TeaTypeName]
+}
+
+type TeaTypeName {
+  name: String
+  language: String
+}
+
+input TeaTypeInput {
+  names: [TeaTypeNameInput]
+}
+
+input TeaTypeNameInput {
+  name: String
+  language: String
+}
+
+type Query {
+  teaTypes: [TeaType]
+}

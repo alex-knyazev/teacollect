@@ -1,8 +1,7 @@
 import actionsTypes from '@/constants/actionsTypes';
 
 const initialState = {
-  types: ['мои коллекции', 'мировая коллекция'],
-  currentCollectionType: 'мои коллекции',
+  chosenCollectionType: 'мои коллекции',
 };
 
 export default function reducer(state = initialState, action) {
@@ -11,7 +10,7 @@ export default function reducer(state = initialState, action) {
     case actionsTypes.COLLECTION_TYPE_CHANGE:
       return {
         ...state,
-        currentCollectionType: payload,
+        chosenCollectionType: payload,
       };
     default:
       return state;

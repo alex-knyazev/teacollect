@@ -1,4 +1,4 @@
-class MongoDBConnector {
+class MongooseConnector {
   constructor(connection) {
     this.connection = connection;
   }
@@ -10,3 +10,5 @@ class MongoDBConnector {
     return connection.collection(connectionName);
   }
 }
+
+module.exports = MongooseConnector;

@@ -5,9 +5,9 @@ import Card from '@/components/specific/Card';
 
 import styles from './index.scss';
 
-const Collection = (props) => {
-  const { data } = props;
-  const cards = data.map((el) => <Card key={el.id} data={el} />);
+const Collection = props => {
+  const { teas } = props;
+  const cards = teas.map(el => <Card key={el.id} data={el} />);
   return (
     <div className={styles.collection}>
       <CardsGrid>{cards}</CardsGrid>

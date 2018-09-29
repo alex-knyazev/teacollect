@@ -1,0 +1,9 @@
+type Birthplace {
+  location: Coordinates
+  name: String
+}
+
+input BithplaceInput {
+  location: CoordinatesInput
+  name: String
+}

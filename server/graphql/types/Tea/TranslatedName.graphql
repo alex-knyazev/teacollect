@@ -1,0 +1,4 @@
+type TranslatedName {
+  name: String
+  language: String
+}
