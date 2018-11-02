@@ -1,5 +1,6 @@
 type TeaType {
   id: ID!
+  name: String
   names: [TeaTypeName]
 }
 

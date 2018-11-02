@@ -2,3 +2,8 @@ type TranslatedName {
   name: String
   language: String
 }
+
+input TranslatedNameInput {
+  name: String
+  language: String
+}

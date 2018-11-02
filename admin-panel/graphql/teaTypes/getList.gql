@@ -1,0 +1,6 @@
+query teaTypes {
+  teaTypes {
+    id
+    name
+  }
+}

@@ -1,0 +1,6 @@
+mutation createTea($input: TeaInput!) {
+  createTea(input: $input) {
+    id
+    name
+  }
+}

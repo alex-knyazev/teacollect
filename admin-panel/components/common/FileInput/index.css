@@ -1,0 +1,4 @@
+input[type='file'] {
+  position: absolute;
+  left: -99999px;
+}

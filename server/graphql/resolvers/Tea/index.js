@@ -1,10 +1,9 @@
-const sleep = require('sleep-promise');
+const fs = require('fs');
 
 module.exports = {
   Query: {
     teas: async (obj, args, context, info) => {
       const { Tea } = context.models;
-
       const teas = await Tea.find();
 
       return teas;
@@ -13,6 +12,9 @@ module.exports = {
   Mutation: {
     createTea: async (obj, args, context, info) => {
       const { Tea } = context.models;
+
+      const { image } = tea.args;
+      const file = await image;
 
       const tea = new Tea(args.input);
 
