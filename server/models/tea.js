@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const geoPointSchema = require('./geoPointSchema');
 
 const tea = new mongoose.Schema({
-  type: String,
+  type: mongoose.Schema.Types.ObjectId,
   name: String,
   translatedNames: [
     {
@@ -18,6 +18,12 @@ const tea = new mongoose.Schema({
   birthplace: {
     location: geoPointSchema,
     name: String,
+    translatedNames: [
+      {
+        name: String,
+        language: String,
+      },
+    ],
   },
   brewingTime: [Number],
   brewingAmount: [Number],

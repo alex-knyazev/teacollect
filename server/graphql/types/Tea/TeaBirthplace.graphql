@@ -1,9 +1,11 @@
 type Birthplace {
   location: Coordinates
   name: String
+  translatedNames: [TranslatedName]
 }
 
 input BithplaceInput {
   location: CoordinatesInput
   name: String
+  translatedNames: [TranslatedNameInput]
 }

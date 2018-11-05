@@ -37,6 +37,10 @@ const server = new ApolloServer({
     db: new MongooseConnector(await createDbConnection()),
     models,
   }),
+  formatError: (error) => {
+    console.log(error);
+    return error;
+  },
 });
 server.applyMiddleware({ app });
 
