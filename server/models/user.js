@@ -29,4 +29,4 @@ const user = new mongoose.Schema({
   articles: [mongoose.Schema.Types.ObjectId],
 });
 
-module.exports = user;
+export default user;

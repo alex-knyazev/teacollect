@@ -36,4 +36,4 @@ const tea = new mongoose.Schema({
   effectText: String,
 });
 
-module.exports = tea;
+export default tea;

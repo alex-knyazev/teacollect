@@ -1,6 +1,6 @@
 import create from './create';
 
-module.exports = {
+export default {
   Query: {
     teaTypes: async (obj, args, context, info) => {
       const { TeaType } = context.models;
