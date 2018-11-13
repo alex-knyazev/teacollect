@@ -1,0 +1,28 @@
+type User {
+  email: String!
+  password: String!
+  avatar: Image
+  firstName: String
+  secondName: String
+  city: String
+  collections: [UserTeaCollection]
+  groups: [UserGroup]
+  articles: [Article]
+}
+
+input UserInput {
+  email: String!
+  password: String!
+  avatar: Upload
+  firstName: String
+  secondName: String
+  city: String
+}
+
+type Query {
+  users: [User]
+}
+
+type Mutation {
+  createUser(input: UserInput!): User
+}

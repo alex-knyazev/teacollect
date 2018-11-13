@@ -1,0 +1,16 @@
+type TeaCollection {
+  id: ID!
+  name: String!
+  user: User
+  teas: [Tea]
+}
+
+input TeaCollectionInput {
+  id: ID!
+  name: String!
+  teas: [TeaInput]
+}
+
+type Query {
+  teaCollections: [TeaCollection]
+}

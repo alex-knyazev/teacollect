@@ -1,9 +1,11 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const tea = require('./tea');
+import tea from './tea';
+import teaType from './teaType';
+import user from './user';
 
 const Tea = mongoose.model('Tea', tea);
+const TeaType = mongoose.model('TeaType', teaType);
+const User = mongoose.model('User', user);
 
-module.exports = {
-  Tea,
-};
+export { Tea, TeaType, User };

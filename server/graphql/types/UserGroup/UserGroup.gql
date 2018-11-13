@@ -1,0 +1,5 @@
+type UserGroup {
+  name: String!
+  leaders: [User]
+  users: [User]
+}

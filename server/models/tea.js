@@ -1,20 +1,21 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const geoPointSchema = require('./geoPointSchema');
+import geoPointSchema from './geoPointSchema';
+import image from './image';
 
 const tea = new mongoose.Schema({
-  type: mongoose.Schema.Types.ObjectId,
   name: String,
+  type: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'TeaType',
+  },
   translatedNames: [
     {
       name: String,
       language: String,
     },
   ],
-  image: {
-    title: String,
-    src: String,
-  },
+  image,
   birthplace: {
     location: geoPointSchema,
     name: String,
@@ -29,7 +30,7 @@ const tea = new mongoose.Schema({
   brewingAmount: [Number],
   temperature: [Number],
   grams: [Number],
-  originText: [Number],
+  originText: String,
   brewingMethodText: String,
   productionText: String,
   effectText: String,

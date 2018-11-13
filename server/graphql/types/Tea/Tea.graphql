@@ -13,13 +13,12 @@ type Tea {
   image: Image
   birthplace: Birthplace
   translatedNames: [TranslatedName]
+  rating: Int
 }
 
 input TeaInput {
   type: ID!
-  name: String
-  translatedNames: [TranslatedNameInput]
-  birthplace: BithplaceInput
+  name: String!
   brewingTime: [Float]
   brewingAmount: [Int]
   temperature: [Int]
@@ -28,6 +27,8 @@ input TeaInput {
   brewingMethodText: String
   productionText: String
   effectText: String
+  translatedNames: [TranslatedNameInput]
+  birthplace: BithplaceInput
   image: Upload
 }
 

@@ -1,0 +1,20 @@
+type TeaType {
+  id: ID!
+  name: String
+  translatedNames: [TranslatedName]
+}
+
+input TeaTypeInput {
+  name: String
+  translatedNames: [TranslatedNameInput]
+}
+
+type Query {
+  teaTypes: [TeaType]
+}
+
+type Mutation {
+  createTeaType(input: TeaTypeInput!): TeaType
+  updateTeaTeaType(id: ID!, input: TeaInput!): TeaType
+  deleteTeaType(id: ID!): ID
+}

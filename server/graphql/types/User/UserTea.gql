@@ -1,0 +1,6 @@
+type UserTea {
+  tea: Tea!
+  rating: Int
+  comment: String
+  addedAt: String
+}

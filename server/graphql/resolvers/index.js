@@ -1,5 +1,6 @@
-const TeaResolvers = require('./Tea');
-const CollectionType = require('./CollectionType');
-const TeaType = require('./TeaType');
+import TeaResolvers from './Tea';
+import CollectionType from './CollectionType';
+import TeaType from './TeaType';
+import UserType from './User';
 
-module.exports = [TeaResolvers, CollectionType, TeaType];
+export default [TeaResolvers, CollectionType, TeaType, UserType];

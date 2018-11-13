@@ -9,8 +9,8 @@ export default {
   apollo: {
     teaTypes: {
       query: teaTypesQuery,
-      fetchPolicy: 'network-only'
-    }
+      fetchPolicy: 'network-only',
+    },
   },
 
   data() {
@@ -29,20 +29,34 @@ export default {
       temperatureDegrees,
       newTea: {
         type: '',
-        name: '',
+        name: 'longjing',
         translatedNames: [
           {
-            name: '',
-            language: ''
-          }
+            name: 'лунцзин',
+            language: 'russian',
+          },
+          {
+            name: '龍井茶',
+            language: 'chinese',
+          },
         ],
         image: null,
         birthplace: {
           location: {
-            lat: 0,
-            lng: 0
+            lat: 30.29365,
+            lng: 120.16142,
           },
-          name: ''
+          name: 'Hangzhou',
+          translatedNames: [
+            {
+              name: 'Ханчжоу',
+              language: 'russian',
+            },
+            {
+              name: '杭州',
+              language: 'chinese',
+            },
+          ],
         },
         brewingTime: [5],
         brewingAmount: [2],
@@ -51,8 +65,8 @@ export default {
         originText: '',
         brewingMethodText: '',
         productionText: '',
-        effectText: ''
-      }
+        effectText: '',
+      },
     };
   },
 
@@ -61,20 +75,14 @@ export default {
       this.$apollo.mutate({
         mutation: createTeaMutation,
         variables: {
-          input: this.newTea
-        }
+          input: this.newTea,
+        },
       });
-    }
+    },
   },
 
   render: function(createElement) {
-    const {
-      teaTypes,
-      newTea,
-      languages,
-      brewingTimes,
-      temperatureDegrees
-    } = this;
+    const { teaTypes, newTea, languages, brewingTimes, temperatureDegrees } = this;
 
     return createElement(Component, {
       props: {
@@ -82,11 +90,11 @@ export default {
         newTea,
         languages,
         brewingTimes,
-        temperatureDegrees
+        temperatureDegrees,
       },
       on: {
-        save: this.saveFile
-      }
+        save: this.saveFile,
+      },
     });
-  }
+  },
 };

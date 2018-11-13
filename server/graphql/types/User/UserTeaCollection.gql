@@ -1,0 +1,6 @@
+type UserTeaCollection {
+  teaCollection: TeaCollection!
+  createdAt: String
+  updatedAt: String
+  teas: [UserTea]
+}

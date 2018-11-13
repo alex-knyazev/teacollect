@@ -3,40 +3,40 @@ export default {
 
   props: {
     value: {
-      type: [Array, String]
+      type: [Array, String],
     },
     accept: {
       type: String,
-      default: '*'
+      default: '*',
     },
     label: {
       type: String,
-      default: 'choose_file'
+      default: 'choose_file',
     },
     required: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     multiple: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   data() {
     return {
-      filename: ''
+      filename: '',
     };
   },
 
   watch: {
     value(v) {
       this.filename = v;
-    }
+    },
   },
 
   mounted() {
@@ -65,7 +65,7 @@ export default {
       //const form = this.getFormData(files);
       if (files) {
         if (files.length > 0) {
-          this.filename = [...files].map((file) => file.name).join(', ');
+          this.filename = [...files].map(file => file.name).join(', ');
         } else {
           this.filename = null;
         }
@@ -73,6 +73,6 @@ export default {
         this.filename = $event.target.value.split('\\').pop();
       }
       this.$emit('input', files[0]);
-    }
-  }
+    },
+  },
 };
