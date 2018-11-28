@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import routes from '@/constants/routes';
+import routes from '@/pages';
 
 import logoIconImg from '@/public/logo-icon.png';
 import { Person } from '@material-ui/icons';

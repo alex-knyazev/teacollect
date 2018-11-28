@@ -5,7 +5,8 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 import configureStore from '@/store';
-import routes from '@/constants/routes';
+import  { routesArray } from '@/pages';
+
 
 import CollectionsPage from '@/pages/Collections';
 import LoginPage from '@/pages/Login';
@@ -14,6 +15,10 @@ import Layout from '../Layout';
 
 const client = new ApolloClient({
   uri: 'http://localhost:3003/graphql',
+});
+
+const Routes = routesArray.map((route) => {
+  return <Route exact path={route.path} component={route.page} />
 });
 
 const App = () => (
