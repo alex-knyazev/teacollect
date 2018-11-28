@@ -4,13 +4,13 @@
   display: grid;
 
   height: 100vh;
+  padding: 0px 40px;
 
-  border-top: 1px solid $darkGreenColor;
+
   grid-template-rows: auto 1fr;
   grid-template-areas:
-    "header"
-    "main";
-    padding: 0px 40px;
+    'header'
+    'main';
 }
 
 .header {

@@ -3,6 +3,9 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const createCommonConfig = () => ({
+  // output: {
+  //   publicPath: '/',
+  // },
   plugins: [
     new HtmlWebPackPlugin({
       title: 'React app',
@@ -17,7 +20,7 @@ const createCommonConfig = () => ({
   ],
 
   resolve: {
-    extensions: ['.json', '.js', '.jsx', '.css', '.scss', 'gql', 'graphql'],
+    extensions: ['.json', '.mjs', '.js', '.jsx', '.css', '.scss', 'gql', 'graphql'],
     alias: {
       '@': path.resolve(__dirname, '../src/'),
     },
@@ -25,6 +28,11 @@ const createCommonConfig = () => ({
 
   module: {
     rules: [
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto',
+      },
       {
         enforce: 'pre',
         test: /\.(js|jsx)$/,

@@ -23,6 +23,7 @@ exports.createDevConfig = ({ host, port } = {}) => ({
       errors: true,
     },
     stats: 'minimal',
+    historyApiFallback: true,
   },
 
   module: {

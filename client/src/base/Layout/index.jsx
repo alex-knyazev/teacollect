@@ -1,19 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-import HeaderContent from '@/components/HeaderContent';
+import HeaderContent from '@/containers/HeaderContent';
 
 import styles from './index.module.scss';
 
-const Layout = (props) => {
-  const { children } = props;
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: '#00922e' }, // Purple and green play nicely together.
+    secondary: { main: '#47371e' }, // This is just green.A700 as hex.
+  },
+  typography: {
+    // Use the system font instead of the default Roboto font.
+    fontFamily: ['Philosopher', 'serif'].join(','),
+  },
+});
+
+const Layout = props => {
+  const {
+    children,
+    location: { pathname },
+  } = props;
+
+  const isShowHeader = pathname !== '/login';
   return (
-    <div className={styles.layout}>
-      <header className={styles.header}>
-        <HeaderContent />
-      </header>
-      <main className={styles.main}>{children}</main>
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <div className={styles.layout}>
+        {isShowHeader && (
+          <header className={styles.header}>
+            <HeaderContent />
+          </header>
+        )}
+        <div className={styles.main}>{children}</div>
+      </div>
+    </MuiThemeProvider>
   );
 };
 
@@ -25,4 +47,4 @@ Layout.defaultProps = {
   children: '',
 };
 
-export default Layout;
+export default withRouter(Layout);

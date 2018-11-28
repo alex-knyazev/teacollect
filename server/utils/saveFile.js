@@ -11,7 +11,7 @@ const saveFile = (file) => {
     const writeStream = stream.pipe(fs.createWriteStream(pathToFile));
 
     writeStream.on('finish', () => {
-      resolve({ urlToFile: `http://localhost:3003/images/${newFilename}`, filename: newFilename });
+      resolve({ urlToFile: `http://localhost:5000/${newFilename}`, filename: newFilename });
     });
 
     writeStream.on('error', (err) => {

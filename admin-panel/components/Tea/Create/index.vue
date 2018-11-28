@@ -29,6 +29,7 @@
         <FileInput
           :value="newTea.image"
           accept="image/*"
+          @input="handleFileChange"
         />
       </div>
 

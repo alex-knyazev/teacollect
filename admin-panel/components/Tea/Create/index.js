@@ -49,6 +49,10 @@ export default {
       this.newTea.birthplace.translatedNames.pop();
     },
 
+    handleFileChange(file) {
+      this.newTea.image = file;
+    },
+
     handleSaveClick() {
       this.$emit('save');
     },

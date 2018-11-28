@@ -7,7 +7,9 @@ import { ApolloProvider } from 'react-apollo';
 import configureStore from '@/store';
 import routes from '@/constants/routes';
 
-import CollectionsPage from '@/pages/CollectionsPage';
+import CollectionsPage from '@/pages/Collections';
+import LoginPage from '@/pages/Login';
+
 import Layout from '../Layout';
 
 const client = new ApolloClient({
@@ -20,7 +22,9 @@ const App = () => (
       <Router>
         <Layout>
           <Switch>
+            <Route exact path={routes.INDEX} component={CollectionsPage} />
             <Route exact path={routes.COLLECTIONS_PAGE} component={CollectionsPage} />
+            <Route exact path={routes.LOGIN_PAGE} component={LoginPage} />
           </Switch>
         </Layout>
       </Router>

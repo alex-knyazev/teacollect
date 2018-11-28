@@ -5,9 +5,8 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 20px 0px;
+  padding: 12px 0px;
 
-  
   font-family: 'Philosopher', sans-serif;
 
   a {
@@ -18,7 +17,6 @@
 
     color: $darkGreenColor;
 
-    
     font-size: 2.1rem;
 
     p {
@@ -34,15 +32,27 @@
   }
 
   button {
-    font-size: 1rem;
-    font-family: inherit;
-    border: none;
-    background-color: transparent;
     margin-right: 50px;
+
     cursor: pointer;
 
+    border: none;
+    background-color: transparent;
+
+    font-family: inherit;
+    font-size: 1rem;
+
     &:hover {
-      color: green
+      color: green;
     }
   }
+}
+
+.loginItem {
+  margin-top: -5px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
 }
