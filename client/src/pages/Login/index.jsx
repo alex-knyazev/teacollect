@@ -3,10 +3,6 @@ import React from 'react';
 import Page from '@/components/common/Page';
 import Login from '@/containers/Login';
 
-const MainPage = () => (
-  <Page title="Main page">
-    <Login />
-  </Page>
-);
+const LoginPage = () => <div>login</div>;
 
-export default MainPage;
+export default LoginPage;

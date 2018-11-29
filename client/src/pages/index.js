@@ -1,11 +1,11 @@
-const CollectionsPage = require('./Collections');
-const TeaPage = require('./Tea');
-const ArticlesPage = require('./Articles');
-const GroupsPage = require('./Groups');
-const TeaMapPage = require('./TeaMap');
-const SettingsPage = require('./Settings');
-const LoginPage = require('./Login');
-const StatisticsPage = require('./Statistics');
+import CollectionsPage from './Collections';
+import TeaPage from './Tea';
+import ArticlesPage from './Articles';
+import GroupsPage from './Groups';
+import TeaMapPage from './TeaMap';
+import SettingsPage from './Settings';
+import LoginPage from './Login';
+import StatisticsPage from './Statistics';
 
 const COLLECTIONS_MY_WANT_PAGE = {
   name: '/collections/my/want',
@@ -36,27 +36,27 @@ const GROUPS_ALL_PAGE = {
   page: GroupsPage,
 };
 const GROUPS_MY_PAGE = {
-  name: 'groups/my',
+  name: '/groups/my',
   page: GroupsPage,
 };
 const TEA_MAP_CHINA_PAGE = {
-  name: 'teaMap/china',
+  name: '/teaMap/china',
   page: TeaMapPage,
 };
 const TEA_MAP_AFRICA_PAGE = {
-  name: 'teaMap/africa',
+  name: '/teaMap/africa',
   page: TeaMapPage,
 };
 const TEA_MAP_INDIA_PAGE = {
-  name: 'teaMap/india',
+  name: '/teaMap/india',
   page: TeaMapPage,
 };
 const SETTINGS_PAGE = {
-  name: 'settings',
+  name: '/settings',
   page: SettingsPage,
 };
 const STATISTICS_PAGE = {
-  name: 'statistics',
+  name: '/statistics',
   page: StatisticsPage,
 };
 
