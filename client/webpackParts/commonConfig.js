@@ -3,9 +3,9 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const createCommonConfig = () => ({
-  // output: {
-  //   publicPath: '/',
-  // },
+  output: {
+    publicPath: '/',
+  },
   plugins: [
     new HtmlWebPackPlugin({
       title: 'React app',

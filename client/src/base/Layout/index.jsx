@@ -9,8 +9,9 @@ import styles from './index.module.scss';
 
 const theme = createMuiTheme({
   palette: {
-    primary: { main: '#00922e' }, // Purple and green play nicely together.
+    primary: { main: '#5ea538' }, // Purple and green play nicely together.
     secondary: { main: '#47371e' }, // This is just green.A700 as hex.
+    mainWhite: { main: '#9ef442' },
   },
   typography: {
     // Use the system font instead of the default Roboto font.

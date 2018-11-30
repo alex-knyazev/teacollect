@@ -6,6 +6,7 @@ import TeaMapPage from './TeaMap';
 import SettingsPage from './Settings';
 import LoginPage from './Login';
 import StatisticsPage from './Statistics';
+import NotFoundPage from './NotFound';
 
 const COLLECTIONS_MY_WANT_PAGE = {
   name: '/collections/my/want',
@@ -65,6 +66,11 @@ const LOGIN_PAGE = {
   page: LoginPage,
 };
 
+const NOT_FOUND_PAGE = {
+  name: '/404',
+  page: NotFoundPage,
+};
+
 export const routesArray = [
   LOGIN_PAGE,
   COLLECTIONS_MY_WANT_PAGE,
@@ -80,6 +86,7 @@ export const routesArray = [
   TEA_MAP_INDIA_PAGE,
   SETTINGS_PAGE,
   STATISTICS_PAGE,
+  NOT_FOUND_PAGE,
 ];
 
 export const routesVocabulary = {
@@ -97,4 +104,5 @@ export const routesVocabulary = {
   TEA_MAP_INDIA_PAGE,
   SETTINGS_PAGE,
   STATISTICS_PAGE,
+  NOT_FOUND_PAGE,
 };
