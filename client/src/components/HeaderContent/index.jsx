@@ -1,19 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { withStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
 
 import { Link } from 'react-router-dom';
 
@@ -130,7 +124,7 @@ class PrimarySearchAppBar extends React.Component {
             </Typography>
             <div className={classes.grow} />
             <div className={classes.navItems}>
-              <Button component={Link} to={routesVocabulary.COLLECTIONS_MY_TRIED_PAGE.name}>
+              <Button component={Link} to={routesVocabulary.COLLECTIONS_WORLD_PAGE  .name}>
                 <Typography color="secondary" variant="subtitle1" noWrap>
                   Коллекции
                 </Typography>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
+import { withRouter } from 'react-router-dom';
 
 import clockImg from '@/public/clock.png';
 import temperatureImg from '@/public/temperature1.png';
@@ -18,6 +19,7 @@ class Card extends Component {
     };
 
     this.openMenu = this.openMenu.bind(this);
+    this.handleCardClick = this.handleCardClick.bind(this);
   }
 
   openMenu() {
@@ -25,6 +27,14 @@ class Card extends Component {
 
     this.setState({
       isShowMenu: !isShowMenu,
+    });
+  }
+
+  handleCardClick(e) {
+    const { id } = this.props.data; 
+    this.props.history.push({
+      pathname: "/tea",
+      search:  id,
     });
   }
 
@@ -50,7 +60,7 @@ class Card extends Component {
     const { src, title } = image;
     const bg = `url(${src})`;
     return (
-      <div className={styles.card}>
+      <div className={styles.card} onClick={this.handleCardClick}>
         <div className={styles.backgroundImage} style={{ backgroundImage: bg }} />
         <div className={styles.cardContent}>
           <div className={styles.mainInfo}>
@@ -113,4 +123,4 @@ class Card extends Component {
 
 Card.propTypes = {};
 
-export default Card;
+export default withRouter(Card);

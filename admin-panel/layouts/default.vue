@@ -62,6 +62,7 @@
         fixed: false,
         items: [
           { icon: 'spa', title: 'Tea', to: '/tea/list' },
+          { icon: 'settings', title: 'Statistics', to: '/statistics' },
         ],
         miniVariant: false,
         right: true,
