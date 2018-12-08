@@ -1,3 +1,5 @@
+import authMiddleware from './auth/passportAuth';
+
 const createError = require('http-errors');
 const { ApolloServer } = require('apollo-server-express');
 const express = require('express');
@@ -25,23 +27,30 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(authMiddleware);
 
 let connection;
 const createDbConnection = async () => {
   if (connection) {
     return connection;
   }
-  connection = await mongoose.connect('mongodb://localhost:27017/teacollect');
+  connection = await mongoose.connect(
+    'mongodb://localhost:27017/teacollect',
+    { seNewUrlParser: true },
+  );
   return connection;
 };
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: async ({ req }) => ({
-    db: new MongooseConnector(await createDbConnection()),
-    models,
-  }),
+  context: async ({ req }) => {
+    debugger;
+    return {
+      db: new MongooseConnector(await createDbConnection()),
+      models,
+    };
+  },
   formatError: (error) => {
     console.log(error);
     return error;

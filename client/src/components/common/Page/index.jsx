@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
  * Page-component
  * Sets page-title in head, caption for page and render childrens
  */
-const Page = (props) => {
+const Page = props => {
   const { title, headerTags, children } = props;
   return (
     <Fragment>

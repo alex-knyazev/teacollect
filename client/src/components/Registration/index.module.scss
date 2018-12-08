@@ -1,4 +1,4 @@
-.LoginWrapper {
+.RegistrationWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,7 +6,7 @@
   height: 100%;
 }
 
-.LoginForm {
+.RegistrationForm {
   display: grid;
 
   width: 350px;
@@ -16,11 +16,11 @@
   }
 }
 
-.LoginTitle {
+.RegistrationTitle {
   text-align: center;
 }
 
-.LoginActions {
+.RegistrationActions {
   display: flex;
   justify-content: space-between;
 }

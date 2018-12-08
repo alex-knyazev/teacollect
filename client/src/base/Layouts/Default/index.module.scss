@@ -1,11 +1,8 @@
-@import '@/constants/colors.scss';
-
 .layout {
   display: grid;
 
   height: 100vh;
   padding: 0px 40px;
-
 
   grid-template-rows: auto 1fr;
   grid-template-areas:

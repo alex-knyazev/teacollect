@@ -7,66 +7,71 @@ import SettingsPage from './Settings';
 import LoginPage from './Login';
 import StatisticsPage from './Statistics';
 import NotFoundPage from './NotFound';
+import RegistrationPage from './Registration';
 
-const COLLECTIONS_MY_WANT_PAGE = {
+export const COLLECTIONS_MY_WANT_PAGE = {
   name: '/collections/my/want',
   page: CollectionsPage,
 };
-const COLLECTIONS_MY_TRIED_PAGE = {
+export const COLLECTIONS_MY_TRIED_PAGE = {
   name: '/collections/my/tried',
   page: CollectionsPage,
 };
-const COLLECTIONS_WORLD_PAGE = {
+export const COLLECTIONS_WORLD_PAGE = {
   name: '/collections/world',
   page: CollectionsPage,
 };
-const TEA_PAGE = {
+export const TEA_PAGE = {
   name: '/tea',
   page: TeaPage,
 };
-const ARTICLES_ALL_PAGE = {
+export const ARTICLES_ALL_PAGE = {
   name: '/articles/all',
   page: ArticlesPage,
 };
-const ARTICLES_FAVORITE_PAGE = {
+export const ARTICLES_FAVORITE_PAGE = {
   name: '/articles/favorite',
   page: ArticlesPage,
 };
-const GROUPS_ALL_PAGE = {
+export const GROUPS_ALL_PAGE = {
   name: '/groups/all',
   page: GroupsPage,
 };
-const GROUPS_MY_PAGE = {
+export const GROUPS_MY_PAGE = {
   name: '/groups/my',
   page: GroupsPage,
 };
-const TEA_MAP_CHINA_PAGE = {
+export const TEA_MAP_CHINA_PAGE = {
   name: '/teaMap/china',
   page: TeaMapPage,
 };
-const TEA_MAP_AFRICA_PAGE = {
+export const TEA_MAP_AFRICA_PAGE = {
   name: '/teaMap/africa',
   page: TeaMapPage,
 };
-const TEA_MAP_INDIA_PAGE = {
+export const TEA_MAP_INDIA_PAGE = {
   name: '/teaMap/india',
   page: TeaMapPage,
 };
-const SETTINGS_PAGE = {
+export const SETTINGS_PAGE = {
   name: '/settings',
   page: SettingsPage,
 };
-const STATISTICS_PAGE = {
+export const STATISTICS_PAGE = {
   name: '/statistics',
   page: StatisticsPage,
 };
 
-const LOGIN_PAGE = {
+export const LOGIN_PAGE = {
   name: '/login',
   page: LoginPage,
 };
+export const REGISTRATION_PAGE = {
+  name: '/registration',
+  page: RegistrationPage,
+};
 
-const NOT_FOUND_PAGE = {
+export const NOT_FOUND_PAGE = {
   name: '/404',
   page: NotFoundPage,
 };
@@ -86,6 +91,7 @@ export const routesArray = [
   TEA_MAP_INDIA_PAGE,
   SETTINGS_PAGE,
   STATISTICS_PAGE,
+  REGISTRATION_PAGE,
   NOT_FOUND_PAGE,
 ];
 
@@ -104,5 +110,6 @@ export const routesVocabulary = {
   TEA_MAP_INDIA_PAGE,
   SETTINGS_PAGE,
   STATISTICS_PAGE,
+  REGISTRATION_PAGE,
   NOT_FOUND_PAGE,
 };

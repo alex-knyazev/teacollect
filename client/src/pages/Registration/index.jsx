@@ -1,15 +1,15 @@
 import React from 'react';
 
 import Page from '@/components/common/Page';
-import Login from '@/containers/Login';
 import CenterContentLayout from '@/base/Layouts/CenterContent';
+import RegistrationCont from '@/containers/Registration';
 
-const LoginPage = () => (
+const MainPage = () => (
   <CenterContentLayout>
-    <Page title="Login">
-      <Login />
+    <Page title="Registration">
+      <RegistrationCont />
     </Page>
   </CenterContentLayout>
 );
 
-export default LoginPage;
+export default MainPage;

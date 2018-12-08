@@ -9,11 +9,18 @@ const LoginMutation = gql`
   mutation login($input: LoginInput!) {
     login(input: $input) {
       username
+      token
     }
   }
 `;
 
 function Login(props) {
+  const { history } = props;
+
+  const handleSignUp = () => {
+    history.push('/registration');
+  };
+
   return (
     <Mutation
       mutation={LoginMutation}
@@ -24,10 +31,10 @@ function Login(props) {
       }}
     >
       {(login, { data }) => {
-        const handleLogin = (username, password) => {
+        const handleSignIn = (username, password) => {
           login({ variables: { input: { username, password } } });
         };
-        return <Component handleLogin={handleLogin} />;
+        return <Component handleSignUp={handleSignUp} handleLogin={handleSignIn} />;
       }}
     </Mutation>
   );

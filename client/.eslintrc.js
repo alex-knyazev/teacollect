@@ -4,8 +4,7 @@ module.exports = {
   parser: 'babel-eslint',
   extends: 'airbnb',
   rules: {
-    // 'import/extensions': 'off',
-    // 'import/no-unresolved': 'off',
+    'no-unused-vars': 'off',
     'no-debugger': 'off',
     'import/prefer-default-export': 'off',
     'react/prop-types': 'off',

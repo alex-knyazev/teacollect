@@ -35,5 +35,6 @@ module.exports = {
         consistent: true,
       },
     ],
+    'arrow-body-style': 'off',
   },
 };

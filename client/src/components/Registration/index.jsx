@@ -5,26 +5,25 @@ import Typography from '@material-ui/core/Typography';
 
 import styles from './index.module.scss';
 
-function Login(props) {
+function Registration(props) {
   const { handleSignIn, handleSignUp } = props;
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   return (
-    <div className={styles.LoginWrapper}>
-      <div className={styles.LoginForm}>
-        <div className={styles.LoginTitle}>
+    <div className={styles.RegistrationWrapper}>
+      <div className={styles.RegistrationForm}>
+        <div className={styles.RegistrationTitle}>
           <Typography gutterBottom variant="h4">
             Teacollect
           </Typography>
-          <Typography variant="body">Ваш пропуск в мир чая</Typography>
+          <Typography variant="body">Регистрация</Typography>
         </div>
         <div>
           <TextField
             fullWidth
             value={username}
             placeholder="email"
-            autoFocus
             onChange={event => setUsername(event.target.value)}
           />
         </div>
@@ -32,25 +31,23 @@ function Login(props) {
           <TextField
             fullWidth
             type="password"
-            placeholder="пароль"
             value={password}
+            placeholder="пароль"
             onChange={event => setPassword(event.target.value)}
           />
         </div>
-        <div className={styles.LoginActions}>
+        <div className={styles.RegistrationActions}>
           <div>
             <Button
               variant="contained"
               color="primary"
-              onClick={() => handleSignIn(username, password)}
+              onClick={() => handleSignUp(username, password)}
             >
-              Войти
+              OK
             </Button>
           </div>
           <div>
-            <Button onClick={() => handleSignUp(username, password)}>
-              Еще не зарегистрированы?
-            </Button>
+            <Button onClick={() => handleSignIn(username, password)}>Уже зарегистрированы?</Button>
           </div>
         </div>
       </div>
@@ -58,4 +55,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default Registration;

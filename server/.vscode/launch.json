@@ -17,18 +17,10 @@
     },
     {
       "type": "node",
-      "request": "launch",
-      "name": "Launch via NPM",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run-script", "start"],
-      "console": "integratedTerminal"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Запустить программу",
-      "program": "${workspaceFolder}/bin/www",
-      "console": "integratedTerminal"
+      "request": "attach",
+      "name": "Attach by Process ID",
+      "restart": true,
+      "processId": "${command:PickProcess}"
     }
   ]
 }
