@@ -1,7 +1,7 @@
-import saveFile from '../../../utils/saveFile';
-import { locationToGeoPoint } from '../../../utils/locationAdapter';
+const saveFile = require('../../../utils/saveFile');
+const { locationToGeoPoint } = require('../../../utils/locationAdapter');
 
-export default async (args, context) => {
+module.exports = async (args, context) => {
   const { Tea } = context.models;
 
   const { input } = args;

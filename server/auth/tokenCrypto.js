@@ -1,7 +1,22 @@
-// import * as config from 'config';
-// import * as jwt from 'jsonwebtoken';
+// Init passport
+const config = require('config');
+const jwt = require('jsonwebtoken');
 
-// import { tokenExpiredError } from '../model/errors/auth';
+module.exports.createToken = async (payload) => {
+  console.log(config.auth.accessTokenLifeTime);
+  return jwt.sign(
+    {
+      ...payload,
+    },
+    config.auth.accessTokenSalt,
+    { expiresIn: config.auth.accessTokenLifeTime },
+  );
+};
+
+// const * as config = require ('config');
+// const * as jwt = require ('jsonwebtoken');
+
+// const { tokenExpiredError } = require ('../model/errors/auth');
 
 // /**
 //  * // This function is called at each request to the database
@@ -35,4 +50,8 @@
 //   );
 // };
 
-// export default verifyToken;
+// module.exports = verifyToken;
+
+module.exports.verifyToken = (token) => {
+  return true;
+};

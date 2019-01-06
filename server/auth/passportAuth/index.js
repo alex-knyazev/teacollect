@@ -1,7 +1,7 @@
-import passport from 'passport';
+const passport = require('passport');
 
-import passportJWT from 'passport-jwt';
-import { Strategy as AnonymousStrategy } from './Anonymous';
+const passportJWT = require('passport-jwt');
+const { Strategy: AnonymousStrategy } = require('./Anonymous');
 
 const JWTStrategy = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
@@ -29,7 +29,7 @@ passport.use(
 
 passport.use(new AnonymousStrategy());
 
-export default [
+module.exports = [
   passport.authenticate(['jwt', 'authenticate-as-anonymous'], {
     session: false,
   }),

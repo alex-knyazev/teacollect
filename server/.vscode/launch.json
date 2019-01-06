@@ -10,7 +10,6 @@
       "name": "nodemon",
       "runtimeExecutable": "nodemon",
       "program": "${workspaceFolder}/bin/www.js",
-      "args": ["--exec", "babel-node"],
       "restart": true,
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"

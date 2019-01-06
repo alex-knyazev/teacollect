@@ -3,11 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon  --inspect./bin/www --exec babel-node",
-    "start-app": "node ./bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
-    "@babel/plugin-proposal-function-bind": "^7.0.0",
     "apollo-server-express": "^2.1.0",
     "config": "^3.0.0",
     "cookie-parser": "~1.4.3",
@@ -31,20 +29,11 @@
     "sleep-promise": "^8.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/node": "^7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
-    "babel-eslint": "10.0.1",
-    "babel-plugin-root-import": "6.1.0",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-flow": "6.23.0",
     "eslint": "^5.6.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-google": "^0.10.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-const": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0"

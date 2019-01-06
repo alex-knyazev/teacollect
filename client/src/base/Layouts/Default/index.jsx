@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import Snackbar from '@material-ui/core/Snackbar';
 
 import HeaderContent from '@/containers/HeaderContent';
 

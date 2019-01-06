@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-import geoPointSchema from './geoPointSchema';
-import image from './image';
+const geoPointSchema = require('./geoPointSchema');
+const image = require('./image');
 
 const tea = new mongoose.Schema({
   name: String,
@@ -36,4 +36,4 @@ const tea = new mongoose.Schema({
   effectText: String,
 });
 
-export default tea;
+module.exports = tea;

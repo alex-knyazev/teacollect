@@ -5,16 +5,10 @@ module.exports = {
     commonjs: true,
     es6: true,
   },
-  settings: {
-    'import/resolver': {
-      'babel-plugin-root-import': {
-        rootPathPrefix: '~',
-        rootPathSuffix: '',
-      },
-    },
-  },
   rules: {
-    'import/prefer-default-export': 'off',
+    'no-unused-vars': 'warn',
+    'no-debugger': 'warn',
+    'const/prefer-default-export': 'off',
     'no-multi-spaces': [
       'error',
       {

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const tea = new mongoose.Schema({
   name: String,
@@ -10,4 +10,4 @@ const tea = new mongoose.Schema({
   ],
 });
 
-export default tea;
+module.exports = tea;

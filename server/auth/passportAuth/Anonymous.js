@@ -2,7 +2,7 @@ const anonymusSuccessPayload = () => ({
   role: 'public',
 });
 
-export class Strategy {
+class Strategy {
   constructor() {
     this.name = 'authenticate-as-anonymous';
   }
@@ -14,3 +14,5 @@ export class Strategy {
     this.success(anonymusSuccessPayload());
   }
 }
+
+module.exports.Strategy = Strategy;

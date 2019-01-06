@@ -1,30 +1,35 @@
-import crypto from 'crypto';
-import config from 'config';
+const crypto = require('crypto');
+const config = require('config');
 
-export const hashPassword = (password) => {
-  debugger;
+const hashPassword = (password) => {
   const salt = crypto.randomBytes(16).toString('base64');
-  debugger;
   const hash = crypto
     .pbkdf2Sync(
       password,
-      salt + config.get('auth.passwordSecretSalt'),
+      salt + config.auth.passwordSecretSalt,
       10000,
       512,
       'sha512',
     )
     .toString('base64');
-  debugger;
-  return { salt, hash };
+  return JSON.stringify({ salt, hash });
 };
 
-export const verifyPasswordWithSalt = (password, salt, hash) => hash
-  === crypto
-    .pbkdf2Sync(
-      password,
-      salt + config.get('auth.passwordSecretSalt'),
-      10000,
-      512,
-      'sha512',
-    )
-    .toString('base64');
+const verifyPasswordWithSalt = (passwordToVerify, passwordFromDB) => {
+  const { hash, salt } = JSON.parse(passwordFromDB);
+  return (
+    hash
+    === crypto
+      .pbkdf2Sync(
+        passwordToVerify,
+        salt + config.auth.passwordSecretSalt,
+        10000,
+        512,
+        'sha512',
+      )
+      .toString('base64')
+  );
+};
+
+module.exports.verifyPasswordWithSalt = verifyPasswordWithSalt;
+module.exports.hashPassword = hashPassword;

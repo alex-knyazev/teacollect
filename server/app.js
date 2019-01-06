@@ -1,18 +1,15 @@
-import authMiddleware from './auth/passportAuth';
-
+const dotenv = require('dotenv');
 const createError = require('http-errors');
-const { ApolloServer } = require('apollo-server-express');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const MongooseConnector = require('./MongooseConnector');
+const authMiddleware = require('./auth/passportAuth');
+const getDBConnection = require('./dbConnection');
+const createApolloServer = require('./apolloServer');
 
-// const {typeDefs, resolvers} = require('./graphql/index');
-const models = require('./models');
-
-const { typeDefs, resolvers } = require('./graphql');
+dotenv.config();
 
 mongoose.set('debug', true);
 
@@ -29,34 +26,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(authMiddleware);
 
-let connection;
-const createDbConnection = async () => {
-  if (connection) {
-    return connection;
-  }
-  connection = await mongoose.connect(
-    'mongodb://localhost:27017/teacollect',
-    { seNewUrlParser: true },
-  );
-  return connection;
-};
+const connection = getDBConnection(process.env.DB_URL);
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: async ({ req }) => {
-    debugger;
-    return {
-      db: new MongooseConnector(await createDbConnection()),
-      models,
-    };
-  },
-  formatError: (error) => {
-    console.log(error);
-    return error;
-  },
-});
-server.applyMiddleware({ app });
+const apollosServer = createApolloServer(connection);
+apollosServer.applyMiddleware({ app });
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -1,4 +1,4 @@
-export default async (args, context) => {
+module.exports = async (args, context) => {
   const { TeaType } = context.models;
 
   const { input } = args;

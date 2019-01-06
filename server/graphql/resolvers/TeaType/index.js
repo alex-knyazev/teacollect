@@ -1,6 +1,6 @@
-import create from './create';
+const create = require('./create');
 
-export default {
+module.exports = {
   Query: {
     teaTypes: async (obj, args, context, info) => {
       const { TeaType } = context.models;

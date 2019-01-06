@@ -4,12 +4,11 @@
  * Module dependencies.
  */
 
-import http from 'http';
-import app from '../app';
-
+const http = require ('http');
+const app = require ('../app');
 
 /**
- * Get port from environment and store in Express.
+ * Get port = require (environment and store in Express.)
  */
 
 const port = normalizePort(process.env.PORT || '3003');

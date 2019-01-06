@@ -1,6 +1,6 @@
-import saveFile from '../../../utils/saveFile';
+const saveFile = require('../../../utils/saveFile');
 
-export default async (args, context) => {
+module.exports = async (args, context) => {
   const { User } = context.models;
 
   const { input } = args;

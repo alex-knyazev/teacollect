@@ -2,57 +2,78 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { withStyles } from '@material-ui/core/styles';
 
-import styles from './index.module.scss';
+import stylesM from './index.module.scss';
+
+const styles = theme => ({
+  progress: {
+    color: 'white',
+  },
+});
 
 function Registration(props) {
-  const { handleSignIn, handleSignUp } = props;
+  const {
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    handleGoToSignIn,
+    isSubmitting,
+    classes,
+  } = props;
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
   return (
-    <div className={styles.RegistrationWrapper}>
-      <div className={styles.RegistrationForm}>
-        <div className={styles.RegistrationTitle}>
-          <Typography gutterBottom variant="h4">
-            Teacollect
-          </Typography>
-          <Typography variant="body">Регистрация</Typography>
-        </div>
-        <div>
-          <TextField
-            fullWidth
-            value={username}
-            placeholder="email"
-            onChange={event => setUsername(event.target.value)}
-          />
-        </div>
-        <div className={styles.AppName}>
-          <TextField
-            fullWidth
-            type="password"
-            value={password}
-            placeholder="пароль"
-            onChange={event => setPassword(event.target.value)}
-          />
-        </div>
-        <div className={styles.RegistrationActions}>
-          <div>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => handleSignUp(username, password)}
-            >
-              OK
-            </Button>
+    <div className={stylesM.RegistrationWrapper}>
+      <div className={stylesM.RegistrationForm}>
+        <form onSubmit={handleSubmit}>
+          <div className={[stylesM.RegistrationFormItem, stylesM.RegistrationTitle].join(' ')}>
+            <Typography gutterBottom variant="h4">
+              Teacollect
+            </Typography>
+            <Typography variant="body">Регистрация</Typography>
           </div>
-          <div>
-            <Button onClick={() => handleSignIn(username, password)}>Уже зарегистрированы?</Button>
+          <div className={[stylesM.RegistrationFormItem]}>
+            <TextField
+              fullWidth
+              name="email"
+              type="email"
+              error={errors.email && touched.email}
+              label={touched.email && errors.email ? errors.email : 'email'}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
+            />
           </div>
-        </div>
+          <div className={stylesM.RegistrationFormItem}>
+            <TextField
+              fullWidth
+              type="password"
+              name="password"
+              error={errors.password && touched.password}
+              label={touched.password && errors.password ? errors.password : 'пароль'}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.password}
+            />
+          </div>
+          <div className={stylesM.RegistrationActions}>
+            <div>
+              <Button variant="contained" color="primary" type="submit">
+                {isSubmitting ? <CircularProgress className={classes.progress} size={18} /> : 'OK'}
+              </Button>
+            </div>
+            <div>
+              <Button onClick={handleGoToSignIn}>Уже зарегистрированы?</Button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   );
 }
 
-export default Registration;
+export default withStyles(styles)(Registration);

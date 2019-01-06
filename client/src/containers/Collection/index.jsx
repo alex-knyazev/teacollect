@@ -11,7 +11,7 @@ const CollectionCont = props => {
   const {
     match: { path },
   } = props;
-  
+
   return (
     <Query query={getTeas}>
       {({ loading, error, data }) => {

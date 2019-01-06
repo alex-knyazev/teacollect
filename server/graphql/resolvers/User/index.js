@@ -1,4 +1,4 @@
-import create from './create';
+const create = require('./create');
 
 module.exports = {
   Query: {

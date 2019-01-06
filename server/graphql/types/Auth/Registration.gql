@@ -1,5 +1,5 @@
 input RegistrationInput {
-  username: String!
+  email: String!
   password: String!
 }
 

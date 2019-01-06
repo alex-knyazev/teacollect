@@ -1,7 +1,7 @@
-import TeaResolvers from './Tea';
-import CollectionType from './CollectionType';
-import TeaType from './TeaType';
-import UserType from './User';
-import Auth from './Auth';
+const TeaResolvers = require('./Tea');
+const CollectionType = require('./CollectionType');
+const TeaType = require('./TeaType');
+const UserType = require('./User');
+const Auth = require('./Auth');
 
-export default [TeaResolvers, CollectionType, TeaType, UserType, Auth];
+module.exports = [TeaResolvers, CollectionType, TeaType, UserType, Auth];

@@ -7,13 +7,11 @@
 }
 
 .RegistrationForm {
-  display: grid;
-
   width: 350px;
+}
 
-  & > div {
-    margin-bottom: 40px;
-  }
+.RegistrationFormItem {
+  margin-bottom: 40px;
 }
 
 .RegistrationTitle {

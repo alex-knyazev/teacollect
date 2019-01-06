@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import image from './image';
+const mongoose = require('mongoose');
+const image = require('./image');
 
 const user = new mongoose.Schema({
   email: String,
@@ -29,4 +29,4 @@ const user = new mongoose.Schema({
   articles: [mongoose.Schema.Types.ObjectId],
 });
 
-export default user;
+module.exports = user;

@@ -12,6 +12,7 @@ import { routesArray, routesVocabulary } from '@/pages';
 import history from './history';
 import muiTheme from './muiTheme';
 import apolloClient from './apolloClient';
+import Notification from '@/containers/Notification';
 
 const Routes = routesArray.map(route => (
   <Route key={route.name} path={route.name} component={route.page} />
@@ -37,6 +38,7 @@ const App = () => (
             {Routes}
             <Redirect from="*" to="/404" />
           </Switch>
+          <Notification />
         </MuiThemeProvider>
       </Router>
     </Provider>

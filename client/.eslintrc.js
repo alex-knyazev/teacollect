@@ -11,6 +11,7 @@ module.exports = {
     'no-shadow': 'off',
     'arrow-parens': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'no-use-before-define': 'off',
   },
   // plugins: ['react', 'import', 'jsx-a11y'],
   globals: {

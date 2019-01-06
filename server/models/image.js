@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const imageSchema = new mongoose.Schema({
   title: String,
   src: String,
 });
 
-export default imageSchema;
+module.exports = imageSchema;
