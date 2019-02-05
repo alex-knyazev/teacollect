@@ -5,6 +5,10 @@ const {
 } = require('../../../auth/passwordCrypto');
 const { createToken } = require('../../../auth/tokenCrypto');
 
+const {
+  UserAlreadyExistsErrorMessages,
+} = require('../../../notifications/errors/user');
+
 module.exports = {
   Mutation: {
     login: async (obj, args, context) => {
@@ -36,7 +40,7 @@ module.exports = {
       const { User } = context.models;
       const userWithSameEmail = await User.find({ email });
       if (userWithSameEmail.length > 0) {
-        throw new Error('user with same email is exists');
+        throw new ApolloError(UserAlreadyExistsErrorMessages['eng'], '1');
       }
       const encodedPassword = hashPassword(password);
       const newUser = new User({

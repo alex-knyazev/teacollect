@@ -1,9 +1,0 @@
-query teaTypes {
-  teaTypes {
-    id
-    names {
-      name
-      language
-    }
-  }
-}

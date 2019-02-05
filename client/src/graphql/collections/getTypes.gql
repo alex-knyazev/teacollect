@@ -1,9 +1,0 @@
-query getCollectionTypes {
-  collectionTypes {
-    id
-    names {
-      name
-      language
-    }
-  }
-}

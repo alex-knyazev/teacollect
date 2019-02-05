@@ -12,7 +12,8 @@ type Tea {
   effectText: String
   image: Image
   birthplace: Birthplace
-  translatedNames: [TranslatedName]
+  firstName: String
+  secondName: String
   rating: Int
 }
 

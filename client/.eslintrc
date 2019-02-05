@@ -1,0 +1,49 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": ["airbnb", "prettier", "prettier/react", "plugin:import/warnings"],
+  "plugins": ["prettier", "import"],
+  "globals": {
+    "document": true,
+    "window": true,
+    "process": true
+  },
+  "rules": {
+    "import/prefer-default-export": "off",
+    "no-use-before-define": "off",
+    "arrow-body-style": "off",
+    "react/prop-types": "off",
+    "prefer-destructuring": "off",
+    "no-debugger": "warn",
+    "no-unused-vars": "warn",
+    "react/no-unused-state": "warn",
+    "react/jsx-filename-extension": "off",
+    "react/react-in-jsx-scope": "off",
+    "class-methods-use-this": "off",
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowTaggedTemplates": true
+      }
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__", "_allPostsMeta"]
+      }
+    ],
+    "consistent-return": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "import/no-extraneous-dependencies": "off",
+    "prettier/prettier": "error",
+    "react/destructuring-assignment": "off",
+    "import/no-unresolved": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off"
+  }
+}

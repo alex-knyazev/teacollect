@@ -13,4 +13,5 @@ input TeaCollectionInput {
 
 type Query {
   teaCollections: [TeaCollection]
+  userTeaCollection(colletionName: String): TeaCollection
 }

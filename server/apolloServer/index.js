@@ -8,7 +8,9 @@ const createApolloServer = (connection) => {
     typeDefs,
     resolvers,
     context: async ({ req }) => {
+      const language = req.headers.language;
       return {
+        language,
         reqHeaders: req.headers,
         models,
         connection,
